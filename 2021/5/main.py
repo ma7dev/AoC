@@ -7,23 +7,16 @@ from typing import List, Tuple
 
 def read(filename: str) -> Tuple[List[List[int]], int, int]: 
     data = []
-    max_val = -1
-    max_val_y = -1
+    max_val = -1*np.inf
+    max_val_y = -1*np.inf
     with open(filename, 'r') as f:
         for _, row in enumerate(f):
             r = [int(i) for e in row.split('->') for i in e.replace(' ','').replace('\n','').split(',')]
-            if max_val == -1:
-                max_val = r[0]
-                max_val_y = r[0]
-            if r[0] > max_val:
-                max_val = r[0]
-            if r[2] > max_val:
-                max_val = r[2]
+            if max(r[0],r[2]) > max_val:
+                max_val = max(r[0],r[2])
             
-            if r[1] > max_val_y:
-                max_val_y = r[1]
-            if r[3] > max_val_y:
-                max_val_y = r[3]
+            if max(r[1],r[3]) > max_val_y:
+                max_val_y = max(r[1],r[3])
 
             data.append(r)
     return data, max_val, max_val_y
@@ -33,7 +26,10 @@ def part_1(data,max_val, max_val_y,verbose=False):
     arr = np.zeros((max_val+1, max_val_y+1))
     for r in data:
         if r[0] == r[2] or r[1] == r[3]:
-            arr[min(r[0],r[2]):max(r[0],r[2])+1, min(r[1],r[3]):max(r[1],r[3])+1] += 1
+            arr[
+                min(r[0],r[2]):max(r[0],r[2])+1, 
+                min(r[1],r[3]):max(r[1],r[3])+1
+            ] += 1
     if verbose:
         print(arr.T)
     utils.pprint(1, len(arr[np.where(arr >= 2)]))
@@ -44,14 +40,13 @@ def part_2(data,max_val, max_val_y,verbose=False):
     arr = np.zeros((max_val+1, max_val_y+1))
     for r in data:
         if r[0] == r[2] or r[1] == r[3]:
-            arr[min(r[0],r[2]):max(r[0],r[2])+1, min(r[1],r[3]):max(r[1],r[3])+1] += 1
+            arr[
+                min(r[0],r[2]):max(r[0],r[2])+1, 
+                min(r[1],r[3]):max(r[1],r[3])+1
+            ] += 1
         else:
-            x = np.sign(r[2]-r[0])
-            y = np.sign(r[3]-r[1])
-            if x == 0:
-                x = 1
-            if y == 0:
-                y = 1
+            x = 1 if np.sign(r[2]-r[0]) >= 0 else -1
+            y = 1 if np.sign(r[3]-r[1]) >= 0 else -1
             for i in range(np.abs(r[2]-r[0])):
                 arr[r[0]+(i*x), r[1]+(i*y)] += 1
     if verbose:
