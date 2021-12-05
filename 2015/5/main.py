@@ -91,8 +91,18 @@ def part_2(data,verbose=False):
     utils.pprint(2, counter)
 
 if __name__ == "__main__":
-    # data = ["ugknbfddgicrmopn", "aaa", "jchzalrnumimnmhp", "haegwjzuvuyypxyu","dvszwmarrgswjxmb"]
-    # data = ["qjhvhtzxzqqjkmpb", "xxyxx","uurcxstgmygtbstg","ieodomkazucvgmuy"]
+    print("Advent of Code 2015 - Day 5")
+    print("-----------------------------")
+    print("Example 1:")
+    data = ["ugknbfddgicrmopn", "aaa", "jchzalrnumimnmhp", "haegwjzuvuyypxyu","dvszwmarrgswjxmb"]
+    part_1(data)
+    part_2(data)
+    print("Example 2:")
+    data = ["qjhvhtzxzqqjkmpb", "xxyxx","uurcxstgmygtbstg","ieodomkazucvgmuy"]
+    part_1(data)
+    part_2(data)
+    print("-----------------------------")
+    print("Test:")
     data = read('input.txt')
     part_1(data)
     part_2(data)

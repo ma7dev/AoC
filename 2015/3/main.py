@@ -58,10 +58,30 @@ def part_2(data: list):
     utils.pprint(2,len(coords))
 
 if __name__ == "__main__":
-    # data = ">"
-    # data = "^>v<"
-    # data = "^v^v^v^v^v"
-    # data = "^v"
+    print("Advent of Code 2015 - Day 3")
+    print("-----------------------------")
+    print("Example 1:")
+    data = ">"
+    data = list(data)
+    part_1(data)
+    part_2(data)
+    print("Example 2:")
+    data = "^>v<"
+    data = list(data)
+    part_1(data)
+    part_2(data)
+    print("Example 3:")
+    data = "^v^v^v^v^v"
+    data = list(data)
+    part_1(data)
+    part_2(data)
+    print("Example 4:")
+    data = "^v"
+    data = list(data)
+    part_1(data)
+    part_2(data)
+    print("-----------------------------")
+    print("Test:")
     data = read('input.txt')
     data = list(data)
     part_1(data)

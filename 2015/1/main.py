@@ -37,7 +37,34 @@ def part_2(data):
     utils.pprint(2,target)
     
 if __name__ == "__main__":
-    # data = "()())"
+    print("Advent of Code 2015 - Day 1")
+    print("-----------------------------")
+    print("Example 1:")
+    data = "(())"
+    part_1(data)
+    part_2(data)
+    print("Example 2:")
+    data = "((("
+    part_1(data)
+    part_2(data)
+    print("Example 3:")
+    data = "))((((("
+    part_1(data)
+    part_2(data)
+    print("Example 4:")
+    data = ")))"
+    part_1(data)
+    part_2(data)
+    print("Example 5:")
+    data = ")"
+    part_1(data)
+    part_2(data)
+    print("Example 6:")
+    data = "()())"
+    part_1(data)
+    part_2(data)
+    print("-----------------------------")
+    print("Test:")
     data = read("input.txt")
     part_1(data)
     part_2(data)

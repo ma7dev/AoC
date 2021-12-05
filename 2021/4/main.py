@@ -76,7 +76,14 @@ def part_2(calls,boards,verbose=False):
                 boards_status[i] = True
 
 if __name__ == "__main__":
-    # calls, boards = read('ex.txt')
+    print("Advent of Code 2021 - Day 4")
+    print("-----------------------------")
+    print("Example:")
+    calls, boards = read('ex.txt')
+    part_1(calls,boards)
+    part_2(calls,boards)
+    print("-----------------------------")
+    print("Test:")
     calls, boards = read('input.txt')
     part_1(calls,boards)
     part_2(calls,boards)

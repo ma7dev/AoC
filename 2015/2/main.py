@@ -34,11 +34,24 @@ def part_2(data: List[List[int]]):
     utils.pprint(1,sum_)
 
 if __name__ == '__main__':
-    # data = "2x3x4"
-    # data = "1x1x10"
-    # data = data.split('x')
-    # data = [[int(i) for i in data]]
-    # data.sort()
+    print("Advent of Code 2015 - Day 2")
+    print("-----------------------------")
+    print("Example 1:")
+    data = "2x3x4"
+    data = data.split('x')
+    data = [[int(i) for i in data]]
+    data.sort()
+    part_1(data)
+    part_2(data)
+    print("Example 2:")
+    data = "1x1x10"
+    data = data.split('x')
+    data = [[int(i) for i in data]]
+    data.sort()
+    part_1(data)
+    part_2(data)
+    print("-----------------------------")
+    print("Test:")
     data = read('input.txt')
     part_1(data)
     part_2(data)

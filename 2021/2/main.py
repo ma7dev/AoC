@@ -13,7 +13,7 @@ def read(filename: str) -> List[Tuple[str, int]]:
             data.append((row[0].split(' ')[0],int(row[0].split(' ')[1])))
     return data
 
-def part_1(data: List[List[str, int]]):
+def part_1(data: List[Tuple[str, int]]):
     utils.start_timer()
     horizontal = 0
     depth = 0
@@ -26,7 +26,7 @@ def part_1(data: List[List[str, int]]):
             depth -= data[i][1]
     utils.pprint(1,horizontal*depth)
 
-def part_2(data: List[List[str, int]]):
+def part_2(data: List[Tuple[str, int]]):
     utils.start_timer()
     horizontal = 0
     depth = 0
@@ -42,7 +42,14 @@ def part_2(data: List[List[str, int]]):
     utils.pprint(2,horizontal*depth)
 
 if __name__ == '__main__':
-    # data = read('ex.txt')
+    print("Advent of Code 2021 - Day 2")
+    print("-----------------------------")
+    print("Example:")
+    data = read('ex.txt')
+    part_1(data)
+    part_2(data)
+    print("-----------------------------")
+    print("Test:")
     data = read('input.txt')
     part_1(data)
     part_2(data)
