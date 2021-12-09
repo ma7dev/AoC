@@ -85,7 +85,7 @@ if __name__ == "__main__":
     data = read('ex1.txt')
     part_1(data)
     part_2(data)
-    print("Example 1:")
+    print("Example 2:")
     data = read('ex2.txt')
     part_1(data)
     part_2(data)
