@@ -119,7 +119,7 @@ def part_2(data,verbose=False):
     utils.pprint(2, step)
 
 if __name__ == "__main__":
-    print("Advent of Code 20XX - Day Y")
+    print("Advent of Code 2021 - Day 11")
     print("-----------------------------")
     print("Example 1:")
     data = read('ex_1.txt')
