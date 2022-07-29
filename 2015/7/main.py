@@ -9,11 +9,6 @@ def read(filename: str) -> List[str]:
     data = []
     with open(filename, 'r') as f:
         for _, row in enumerate(f):
-            # split by ->
-            # split by ' ' for split[0]
-                # 3 elements -> [split[0][1], split[0][0], split[0][2]]
-                # 2 elements -> [split[0][0], split[0][1]]
-            # print(row)
             left, right = row.split('->')
             left = left.split()
             right = right.split()[0]
